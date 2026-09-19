@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>David Kühnemann</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: #222;
+            max-width: 680px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        /* Header layout with image */
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .header-text {
+            flex: 1;
+        }
+
+        .profile-pic {
+            width: 130px;
+            height: 130px;
+            border-radius: 50%; /* Creates the circle */
+            object-fit: cover;  /* Prevents image distortion */
+            border: 2px solid #eaeaea; /* Subtle border ring */
+            flex-shrink: 0;
+        }
+
+        h1 { margin: 0 0 5px 0; font-size: 2rem; }
+        .subtitle { color: #555; font-size: 1.1rem; margin-top: 0; }
+        .links a { margin-right: 12px; color: #0066cc; text-decoration: none; font-weight: 500; }
+        .links a:hover { text-decoration: underline; }
+        h2 { border-bottom: 1px solid #eee; padding-bottom: 5px; margin-top: 30px; }
+        ul { padding-left: 20px; }
+        li { margin-bottom: 8px; }
+        .paper-title { font-weight: bold; }
+
+        /* Responsive design for smaller screens */
+        @media (max-width: 500px) {
+            header {
+                flex-direction: column-reverse; /* Put photo above text on mobile */
+                text-align: center;
+            }
+            .links a {
+                display: inline-block;
+                margin: 4px 6px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-text">
+            <h1>David Kühnemann</h1>
+            <p class="subtitle">PhD Student in Computer Science @ Bocconi University and AI4I</p>
+            <!-- <p>Advisor: <a href="#">Prof. Advisor Name</a> | Lab: <a href="#">Lab Name</a></p> -->
+            <!-- <div class="links"> -->
+            <!--     <a href="mailto:your.email@univ.edu">Email</a> -->
+            <!--     <a href="cv.pdf">CV (PDF)</a> -->
+            <!--     <a href="https://github.com/username">GitHub</a> -->
+            <!--     <a href="https://scholar.google.com/">Google Scholar</a> -->
+            <!-- </div> -->
+        </div>
+        <!-- Add your profile image file here -->
+        <img src="profile.jpg" alt="Your Name" class="profile-pic">
+    </header>
+
+    <section>
+        <h2>About me</h2>
+        <p>
+            I am a PhD student in Computer Science at Bocconi University and the Italian Institute of Artificial Intelligence for Industry (<a href="https://ai4i.it/rde-labs/#CRYPTO">AI4I</a>) advised by Tamer Mour. I am interested in theoretical cryptography and its applications to problems arising in machine learning. Previously, I obtained a Bachelor's degree from RWTH Aachen and a Master's from the University of Amsterdam, where I was advised by Lisa Kohl.
+        </p>
+        <p>My email address is <span id="email"></span></p>
+    </section>
+
+    <section>
+        <h2>Published work</h2>
+        <ul>
+            <li>
+                <span class="paper-title">The Planted Orthogonal Vectors Problem</span><br>
+                <b>K.</b>, Adam Polak, Alon Rosen.<br>
+                <b>ESA 2025.</b> [<a href="https://eprint.iacr.org/2025/780">PDF</a>]
+            </li>
+        </ul>
+    </section>
+    <script>
+  const user = "david.kuhnemann";
+  const domain = "phd.bocconi.it";
+  const element = document.getElementById("email");
+      element.innerHTML = `${user}@${domain}`;
+</script>
+</body>
+</html>
